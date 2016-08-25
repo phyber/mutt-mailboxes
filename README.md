@@ -35,6 +35,8 @@ set sidebar_sort_method=unsorted # IMPORTANT: We're going to use `mutt-mailboxes
 set sidebar_short_path=yes
 set sidebar_folder_indent=yes
 set folder="~/Maildir"
+
+# Assumes that `mutt-mailboxes` is somewhere under PATH
 mailboxes `mutt-mailboxes \
 	--base ~/Maildir \
 `
