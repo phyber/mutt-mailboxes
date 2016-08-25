@@ -11,7 +11,8 @@ It is distributed under the terms of the MIT license.
 ### mutt-mailboxes
 
 There are (currently) no configuration files for `mutt-mailboxes`, mostly due
-to being dissatisfied with `configparser` not having list support.
+to being dissatisfied with `configparser` not having list support and not
+wanting to include any dependencies not in the Python standard library.
 
 Configuration is performed via command line arguments, of which there are 3:
   * `--base | -b`
