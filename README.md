@@ -1,10 +1,8 @@
 # mutt-mailboxes
 
-`mutt-mailboxes` is a tool for use with the `mutt` `mailboxes` command. It is
-written in Python and only used a few standard library modules.
-
-The purpose of this script is to provide the `mutt` sidebar with the mailboxes
-in your preferred order.
+`mutt-mailboxes` is a mailbox sorter for the `mutt` sidebar, written in Python.
+It is used with the `mutt` `mailboxes` command to put the mailboxes in your
+preferred order.
 
 It is distributed under the terms of the MIT license.
 
