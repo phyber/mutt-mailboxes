@@ -5,7 +5,7 @@
 from __future__ import print_function
 import argparse
 import os
-
+import re
 
 def parse_args():
     parser = argparse.ArgumentParser(
@@ -27,7 +27,7 @@ def parse_args():
 
     parser.add_argument(
             '--exclude', '-e',
-            help='''Maildirs to exclude from the listing.
+            help='''Maildirs regexp to exclude from the listing.
                     May be supplied multiple times.''',
             action='append',
             )
@@ -58,13 +58,16 @@ def list_maildirs(base, initial=None, excluded=None):
 
     maildirs = list(initial)
 
+    combined = "(" + ")|(".join(excluded) + ")"
+    compiled = re.compile(combined)
+
     # Get a sorted list of maildirs.
     # initial is excluded here because we already listed those first above.
     maildirs.extend(
         sorted([
             x for x in walk_maildir(base)
             if x not in initial
-            and x not in excluded
+            and not compiled.match(x)
         ])
     )
 
